@@ -1,7 +1,7 @@
 server:
   port: 8085
   servlet:
-    context-path: /Cine
+    context-path: /Platos
     
   error:
     include-details: always
@@ -16,7 +16,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3308/carteleradb2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://localhost:3308/mugiiwaras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
     username: admin
     password: 542345
     driver-class-name: com.mysql.cj.jdbc.Driver
