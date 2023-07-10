@@ -17,10 +17,10 @@ spring:
           enabled: true
           lowerCaseServiceId: true
       routes:
-      - id: id-carteleraWeb
-        uri: lb://CINE
+      - id: id-mugiiwaras
+        uri: lb://MS-PLATOS
         predicates:
-        - Path=/carteleraWeb/**
+        - Path=/mugiiwaras/**
         
       - id: albums
         uri: https://jsonplaceholder.typicode.com/albums

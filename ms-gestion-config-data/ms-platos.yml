@@ -1,7 +1,7 @@
 server:
   port: 8085
   servlet:
-    context-path: /Platos
+    context-path: /ms-platos
     
   error:
     include-details: always
