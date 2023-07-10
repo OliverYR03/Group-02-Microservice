@@ -1,0 +1,53 @@
+<div class="col-md-6 offset-md-3">
+    <h2 class="text-center">Ingresar Nuevo Plato</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label >Nombre </label>
+            <input type="text" class="form-control" [(ngModel)] = "platos.nombre" name="nombre"
+            class="form-control"
+            id = "nombre"
+            name = "nombre"
+            required
+            minlength="3"
+            maxlength="20"
+            placeholder="Digite su Nombre "
+            #nombre = "ngModel">
+        </div>
+        <div class="form-group">
+            <label >Descripcion </label>
+            <input type="text" class="form-control" class="form-control"
+            id = "descripcion"
+            name = "descripcion"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite la Descripcion "
+            #descripcion = "ngModel" [(ngModel)] = "platos.descripcion" name="dni">
+        </div>
+        <div class="form-group">
+            <label >Precio </label>
+            <input type="text" class="form-control" class="form-control"
+            id = "precio"
+            name = "precio"
+            required
+            minlength="1"
+            maxlength="3"
+            placeholder="Digite su precio "
+            #precio = "ngModel" [(ngModel)] = "platos.precio" name="cargo">
+        </div>
+        <div class="form-group">
+            <label >Tipoplato </label>
+            <input type="text" class="form-control"      class="form-control"
+            id = "tipoplato"
+            name = "tipoplato"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Digite El Tipo de Plato "
+            #tipoplato = "ngModel"[(ngModel)] = "platos.tipoplato" name="imagen">
+        </div>
+
+        <button class="btn btn-success">Enviar</button>
+       <a class="btn btn-danger" href="platos" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
+    </form>
+</div>

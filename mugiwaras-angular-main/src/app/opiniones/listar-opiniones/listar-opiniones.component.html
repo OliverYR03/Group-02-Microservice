@@ -1,0 +1,49 @@
+<div class="pagetitle">
+    <h1>OPINIONES</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item active"><a href="opiniones">opiniones</a></li>
+        </ol>
+    </nav>
+</div>
+<a class="btn btn-success float-end" href="opiniones/nuevo" ><i class="fa fa-plus-circle"></i>
+    Agregar</a><br><br>
+
+<div class="panel-body table-responsive" id="listadoregistros">
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th class="text-center">Acciones</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Plato</th>
+                <th class="text-center">Calificacion</th>
+                <th class="text-center">Cliente</th>
+                <th class="text-center">Comentario</th>
+                <th class="text-center">Fecha</th>               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let opiniones of opiniones">
+                <td><a class="btn btn-warning" (click)="actualizarOpinion(opiniones.idopinion)"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-danger"  (click)="eliminarOpinion(opiniones.idopinion)"><i class="fa-solid fa-xmark"></i></a>
+                    </td>
+                <td class="text-center">{{opiniones.idopinion}}</td>
+                <td class="text-center">{{opiniones.platos}}</td>
+                <td class="text-center">{{opiniones.calificacion}}</td>
+                <td class="text-center">{{opiniones.clientes}}</td>
+                <td>{{opiniones.comentario}}</td>
+                <td class="text-center">{{opiniones.fecha}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>Acciones</th>
+            <th>Id</th>
+            <th>Plato</th>
+            <th>Calificacion</th>
+            <th>Cliente</th>
+            <th>Comentario</th>
+            <th>Fecha</th>
+    </tfoot>
+    </table>
+</div>

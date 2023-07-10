@@ -1,0 +1,49 @@
+<div class="pagetitle">
+    <h1>PERSONAL</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item active"><a href="personal">personal</a></li>
+        </ol>
+    </nav>
+</div>
+<a class="btn btn-success float-end" href="personal/nuevo" ><i class="fa fa-plus-circle"></i>
+    Agregar</a><br><br>
+
+<div class="panel-body table-responsive" id="listadoregistros">
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Plato</th>
+                <th>Total</th>
+                
+            </tr>
+        
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let personal of personal">
+                <td><a class="btn btn-warning" (click)="actualizarPersonal(personal.idpersonal)"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-danger" (click)="eliminarPersonal(personal.idpersonal)"><i class="fa-solid fa-xmark"></i></a>
+                    </td>
+                <td>{{personal.idpersonal}}</td>
+                <td>{{personal.nombre}}</td>
+                <td>{{personal.dni}}</td>
+                <td>{{personal.cargo}}</td>
+                <td>{{personal.imagen}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>Acciones</th>
+                <th>Id</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Plato</th>
+                <th>Total</th>
+        </tfoot>
+    </table>
+</div>

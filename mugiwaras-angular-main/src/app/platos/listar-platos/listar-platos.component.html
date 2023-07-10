@@ -1,0 +1,54 @@
+<div class="pagetitle">
+    <h1>PLATOS</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item active"><a href="platos">platos</a></li>
+        </ol>
+    </nav>
+
+</div>
+<a class="btn btn-success float-end"  (click)="mostrar()" ><i class="fa fa-plus-circle"></i>
+    Agregar</a><br><br>
+<div *ngIf="reg == 1">
+    <app-registrar-platos></app-registrar-platos>
+</div>
+<div class="panel-body table-responsive" id="listadoregistros">
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+                
+            </tr>
+        
+        </thead>
+        <tbody>
+            <tr *ngFor="let platos of platos">
+                <td><a class="btn btn-warning" (click)="actualizarPlato(platos.idplato)"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-danger" (click)="eliminarPlato(platos.idplato)"><i class="fa-solid fa-xmark"></i></a>
+                    </td>
+                <td>{{platos.idplato}}</td>
+                <td>{{platos.nombre}}</td>
+                <td>{{platos.descripcion}}</td>
+                <td>{{platos.precio}}</td>
+                <td>{{platos.tipoplato}}</td>
+                <td><img src="{{platos.imagen}}" alt="Imagen del plato" style="width:50px"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <th>Acciones</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+    </tfoot>
+    </table>
+</div>

@@ -1,0 +1,72 @@
+<div class="pagetitle">
+    <h1>PERSONAL</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item"><a href="personal">personal</a></li>
+            <li class="breadcrumb-item active">nuevo</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+<div class="col-md-12">
+    <div class="box">
+<div class="card-body">
+    <form (ngSubmit)="onSubmit()">  
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label >Nombre</label>
+                <input type="text" class="form-control" [(ngModel)] = "personal.nombre" name="nombre"
+                class="form-control"
+                id = "nombre"
+                name = "nombre"
+                required
+                minlength="3"
+                maxlength="20"
+                placeholder="Digitar el Platillo "
+                #nombre = "ngModel">
+            </div>
+        </div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label >Dni </label>
+            <input type="text" class="form-control" class="form-control"
+            id = "direccion"
+            name = "direccion"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite la Calificacion "
+            #direccion = "ngModel" [(ngModel)] = "personal.dni" name="dni">
+        </div></div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label >Cargo</label>
+            <input type="text" class="form-control" class="form-control"
+            id = "numero"
+            name = "numero"
+            required
+            minlength="1"
+            maxlength="3"
+            placeholder="Cliente "
+            #numero = "ngModel" [(ngModel)] = "personal.cargo" name="cargo">
+        </div></div>
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label >Imagen</label>
+            <input type="text" class="form-control"      class="form-control"
+            id = "tipopago"
+            name = "tipopago"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Digite El Comentario "
+            #tipoplato = "ngModel"[(ngModel)] = "personal.imagen" name="imagen">
+        </div></div>
+        <button class="btn btn-success">Enviar</button>
+       <a class="btn btn-danger" href="personal" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
+    </form>
+</div>
+    </div>
+</div>
+</div>

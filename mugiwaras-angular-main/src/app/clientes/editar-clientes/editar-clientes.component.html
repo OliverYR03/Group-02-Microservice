@@ -1,0 +1,60 @@
+<div class="pagetitle">
+    <h1>CLIENTES</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item"><a href="clientes">clientes</a></li>
+            <li class="breadcrumb-item active">editar</li>
+        </ol>
+    </nav>
+</div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label >Nombre</label>
+            <input type="text" class="form-control" [(ngModel)] = "clientes.nombre" name="nombre"
+            class="form-control"
+            id = "nombre"
+            name = "nombre"
+            required
+            minlength="3"
+            maxlength="20"
+            placeholder="Digite su Nombre "
+            #nombre = "ngModel">
+        </div>
+        <div class="form-group">
+            <label >Direccion </label>
+            <input type="text" class="form-control" class="form-control"
+            id = "direccion"
+            name = "direccion"
+            required
+            minlength="4"
+            maxlength="50"
+            placeholder="Digite la Descripcion "
+            #direccion = "ngModel" [(ngModel)] = "clientes.direccion" name="dni">
+        </div>
+        <div class="form-group">
+            <label >Numero </label>
+            <input type="text" class="form-control" class="form-control"
+            id = "numero"
+            name = "numero"
+            required
+            minlength="1"
+            maxlength="3"
+            placeholder="Digite su precio "
+            #numero = "ngModel" [(ngModel)] = "clientes.numero" name="cargo">
+        </div>
+        <div class="form-group">
+            <label >Tipo Pago </label>
+            <input type="text" class="form-control"      class="form-control"
+            id = "tipopago"
+            name = "tipopago"
+            required
+            minlength="4"
+            maxlength="10"
+            placeholder="Digite El Tipo de Plato "
+            #tipoplato = "ngModel"[(ngModel)] = "clientes.tipopago" name="imagen">
+        </div>
+
+        <button class="btn btn-success">Enviar</button>
+       <a class="btn btn-danger" href="clientes" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
+    </form>

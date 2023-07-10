@@ -1,0 +1,52 @@
+<div class="pagetitle">
+    <h1>CLIENTES</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">home</a></li>
+            <li class="breadcrumb-item active"><a th:href="ordenes/listarOrdenes">ordenes</a></li>
+        </ol>
+    </nav>
+</div>
+<a class="btn btn-success float-end" href="clientes/nuevo" ><i class="fa fa-plus-circle"></i>
+    Agregar</a><br><br>
+
+<div class="panel-body table-responsive" id="listadoregistros">
+    
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+                
+            </tr>
+        
+        </thead>
+        <tbody>
+            <tr *ngFor="let clientes of clientes">
+                <td><a class="btn btn-warning"(click)="actualizarCliente(clientes.idclientes)"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-danger" (click)="eliminarCliente(clientes.idclientes)"><i class="fa-solid fa-xmark"></i></a>
+                    </td>
+                <td>{{clientes.idclientes}}</td>
+                <td>{{clientes.nombre}}</td>
+                <td>{{clientes.numero}}</td>
+                <td>{{clientes.direccion}}</td>
+                <td>{{clientes.correo}}</td>
+                <td>{{clientes.tipopago}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <th>Acciones</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+    </tfoot>
+    </table>
+</div>
