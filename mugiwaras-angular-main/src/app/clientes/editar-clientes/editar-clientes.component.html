@@ -8,53 +8,63 @@
         </ol>
     </nav>
 </div>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()"  #formulario="ngForm">
         <div class="form-group">
-            <label >Nombre</label>
-            <input type="text" class="form-control" [(ngModel)] = "clientes.nombre" name="nombre"
-            class="form-control"
-            id = "nombre"
-            name = "nombre"
-            required
-            minlength="3"
-            maxlength="20"
-            placeholder="Digite su Nombre "
-            #nombre = "ngModel">
+            <label>Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="clientes.nombre" id="nombre" name="nombre" required minlength="3"
+                maxlength="50" placeholder="Nombre del cliente" #nombre="ngModel">
+            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger mt-2">
+                <div *ngIf="nombre.errors?.['required']">El nombre es requerido</div>
+                <div *ngIf="nombre.errors?.['soloLetras']">El nombre no debe contener números.</div>
+                <div *ngIf="nombre.errors?.['minlength'] || nombre.errors?.['maxlength']">Ingrese un nombre válido</div>
+            </div>
+    
         </div>
         <div class="form-group">
-            <label >Direccion </label>
-            <input type="text" class="form-control" class="form-control"
-            id = "direccion"
-            name = "direccion"
-            required
-            minlength="4"
-            maxlength="50"
-            placeholder="Digite la Descripcion "
-            #direccion = "ngModel" [(ngModel)] = "clientes.direccion" name="dni">
-        </div>
-        <div class="form-group">
-            <label >Numero </label>
-            <input type="text" class="form-control" class="form-control"
-            id = "numero"
-            name = "numero"
-            required
-            minlength="1"
-            maxlength="3"
-            placeholder="Digite su precio "
-            #numero = "ngModel" [(ngModel)] = "clientes.numero" name="cargo">
-        </div>
-        <div class="form-group">
-            <label >Tipo Pago </label>
-            <input type="text" class="form-control"      class="form-control"
-            id = "tipopago"
-            name = "tipopago"
-            required
-            minlength="4"
-            maxlength="10"
-            placeholder="Digite El Tipo de Plato "
-            #tipoplato = "ngModel"[(ngModel)] = "clientes.tipopago" name="imagen">
+            <label>Direccion</label>
+            <input type="text" class="form-control" [(ngModel)]="clientes.direccion" id="direccion" name="direccion" required minlength="4"
+                maxlength="50" placeholder="Dirección" #direccion="ngModel">
+            <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="text-danger mt-2">
+                <div *ngIf="direccion.errors?.['required']">La dirección es requerida.</div>
+                <div *ngIf="direccion.errors?.['minlength'] || direccion.errors?.['maxlength']">Ingrese una dirección válida</div>
+            </div>
         </div>
 
-        <button class="btn btn-success">Enviar</button>
-       <a class="btn btn-danger" href="clientes" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
+        <div class="form-group">
+            <label>Número</label>
+            <input type="number" class="form-control" [(ngModel)]="clientes.numero" id="numero" name="numero" required pattern="^\d{9}$"
+                placeholder="Número" #numero="ngModel" maxlength="9" minlength="9">
+    
+            <div *ngIf="numero.invalid && (numero.dirty || numero.touched)" class="text-danger mt-2">
+                <div *ngIf="numero.errors?.['required']">El número es requerido.</div>
+                <div *ngIf="numero.errors?.['pattern']">Ingrese un número válido (9 dígitos numéricos)</div>
+                <div *ngIf="numero.errors?.['maxlength']">Ingrese un número válido (9 dígitos numéricos)</div>
+                <div *ngIf="numero.errors?.['minlength']">Ingrese un número válido (9 dígitos numéricos)</div>
+            </div>
+        </div>
+
+    
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" id="correo" class="form-control" [(ngModel)]="clientes.correo" name="correo" required
+                   minlength="4" required email placeholder="Digite el Correo" #correo="ngModel">
+            <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="text-danger mt-2">
+              <div *ngIf="correo.errors?.['required']">El correo es requerido.</div>
+              <div *ngIf="correo.errors?.['minlength'] || correo.errors?.['email']">Ingrese un correo válido.</div>
+            </div>
+          </div>
+    
+        <div class="form-group">
+            <label>Tipo de Pago</label>
+            <input type="text" id="tipopago" class="form-control" [(ngModel)]="clientes.tipopago" name="tipopago" required minlength="4"
+                maxlength="20" placeholder="Tipo de Pago" #tipopago="ngModel">
+            <div *ngIf="tipopago.invalid && (tipopago.dirty || tipopago.touched)" class="text-danger mt-2">
+                <div *ngIf="tipopago.errors?.['required']">El tipo de pago es requerido.</div>
+                <div *ngIf="tipopago.errors?.['minlength'] || tipopago.errors?.['maxlength']">El tipo de pago debe tener
+                    entre 4 y 10 caracteres.</div>
+            </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!formulario.valid">Enviar</button>
+       <a class="btn btn-danger" href="clientes" type="button">Cancelar</a>
     </form>

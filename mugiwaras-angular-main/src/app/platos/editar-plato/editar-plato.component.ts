@@ -11,13 +11,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarPlatoComponent implements OnInit{
 
   id:number;
-  platos:Platos = new Platos();
-  constructor(private route:ActivatedRoute, private platosServicio: PlatosService,private router:Router){}
+  plato:Platos = new Platos();
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  tipoplato: string;
+  imagen: string;
+
+  constructor(
+    private route:ActivatedRoute, 
+    private platosServicio: PlatosService,
+    private router:Router){}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.platosServicio.obtenerPlatoPorId(this.id).subscribe(dato=> {
-      this.platos = dato;
+      this.plato = dato;
     },error => console.log(error));
       
   }
@@ -27,7 +36,7 @@ export class EditarPlatoComponent implements OnInit{
   }
 
   onSubmit(){
-    this.platosServicio.actualizarPlato(this.id,this.platos).subscribe(dato => {
+    this.platosServicio.actualizarPlato(this.id,this.plato).subscribe(dato => {
       this.irALaListaDePlato();
     },error => console.log(error));
   }

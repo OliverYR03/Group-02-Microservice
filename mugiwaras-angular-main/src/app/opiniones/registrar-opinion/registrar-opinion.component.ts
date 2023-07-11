@@ -14,10 +14,10 @@ export class RegistrarOpinionComponent implements OnInit{
   constructor(private route:ActivatedRoute, private opinionesServicio: OpinionesService,private router:Router){}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.opinionesServicio.obtenerOpinionId(this.id).subscribe(dato=> {
-      this.opiniones = dato;
-    },error => console.log(error));
+    // this.id = this.route.snapshot.params['id'];
+    // this.opinionesServicio.obtenerOpinionId(this.id).subscribe(dato=> {
+    //   this.opiniones = dato;
+    // },error => console.log(error));
   }
 
   

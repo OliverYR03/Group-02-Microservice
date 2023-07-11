@@ -12,7 +12,11 @@ export class EditarOpinionComponent implements OnInit{
 
   id:number;
   opiniones:Opiniones = new Opiniones();
-  constructor(private route:ActivatedRoute, private opinionesServicio: OpinionesService,private router:Router){}
+  constructor(
+    private route:ActivatedRoute, 
+    private opinionesServicio: OpinionesService,
+    private router:Router
+    ){}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

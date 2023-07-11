@@ -1,28 +1,98 @@
-<div class="col-md-6 offset-md-3">
-    <h2 class="text-center">Editar Plato</h2>
-    <form (ngSubmit)="onSubmit()" >
-        <div class="form-group">
-            <label >Nombre </label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)] = "platos.idplato" name="nombre">
-        </div>
-        <div class="form-group">
-            <label >Nombre </label>
-            <input type="text" class="form-control" id="nombre" [(ngModel)] = "platos.nombre" name="nombre">
-        </div>
-        <div class="form-group">
-            <label >Descripcion </label>
-            <input type="text" class="form-control" id="dni" [(ngModel)] = "platos.descripcion" name="dni">
-        </div>
-        <div class="form-group">
-            <label >Precio </label>
-            <input type="text" class="form-control" id="cargo" [(ngModel)] = "platos.precio" name="cargo">
-        </div>
-        <div class="form-group">
-            <label >Tipoplato </label>
-            <input type="text" class="form-control" id="imagen" [(ngModel)] = "platos.tipoplato" name="imagen">
-        </div>
+<div class="pagetitle">
+    <h1>PLATOS</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">home</a></li>
+        <li class="breadcrumb-item"><a href="platos">platos</a></li>
+        <li class="breadcrumb-item active">editar</li>
+      </ol>
+    </nav>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()"  #formulario="ngForm">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" [(ngModel)]="plato.nombre" name="nombre"
+                  id="nombre"
+                  required
+                  minlength="3"
+                  maxlength="40"
+                  placeholder="Nombre del plato"
+                  #nombre="ngModel">
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger mt-2">
+                  <div *ngIf="nombre.errors?.['required']">El nombre es requerido.</div>
+                  <div *ngIf="nombre.errors?.['minlength'] || nombre.errors?.['maxlength']">Ingrese un nombre válido.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Descripción</label>
+                <input type="text" class="form-control" [(ngModel)]="plato.descripcion" name="descripcion"
+                  id="descripcion"
+                  required
+                  minlength="5"
+                  maxlength="60"
+                  placeholder="Descripción del plato"
+                  #descripcion="ngModel">
+                <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="text-danger mt-2">
+                  <div *ngIf="descripcion.errors?.['required']">La descripción es requerida.</div>
+                  <div *ngIf="descripcion.errors?.['minlength'] || descripcion.errors?.['maxlength']">Ingrese una descripción válida.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Precio</label>
+                <input type="number" class="form-control" [(ngModel)]="plato.precio" name="precio"
+                  id="precio" minlength="1" maxlength="10"
+                  required
+                  placeholder="Precio del plato"
+                  #precio="ngModel">
+                <div *ngIf="precio.invalid" class="text-danger mt-2">
+                  <div *ngIf="precio.errors?.['required']">El precio es requerido.</div>
+                  <div *ngIf="precio.errors?.['minlength'] || precio.errors?.['maxlength']">Ingrese un precio válido.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Tipo de Plato</label>
+                <input type="text" class="form-control" [(ngModel)]="plato.tipoplato" name="tipoplato"
+                  id="tipoplato"
+                  required
+                  minlength="3"
+                  maxlength="20"
+                  placeholder="Tipo de plato"
+                  #tipoPlato="ngModel">
+                <div *ngIf="tipoPlato.invalid && (tipoPlato.dirty || tipoPlato.touched)" class="text-danger mt-2">
+                  <div *ngIf="tipoPlato.errors?.['required']">El tipo de plato es requerido.</div>
+                  <div *ngIf="tipoPlato.errors?.['minlength']">Ingrese un tipo de plato válido.</div>
+                </div>
+              </div>
+            </div>
 
-        <button class="btn btn-success">Enviar</button>
-        <a class="btn btn-danger" href="platos" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
-    </form>
-</div>
+            <div class="form-group">
+              <label>Imagen</label>
+              <input type="url" class="form-control" [(ngModel)]="plato.imagen" name="imagen"
+                  id="imagen"
+                  required
+                  placeholder="Imagen"
+                  #imagen="ngModel">
+              <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)" class="text-danger mt-2">
+                  <div *ngIf="imagen.errors?.['required']">La imagen es requerida.</div>
+              </div>
+          </div>
+            <button class="btn btn-success" [disabled]="!formulario.valid">Editar</button>
+            <a class="btn btn-danger" href="platos" type="button">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

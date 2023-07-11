@@ -8,7 +8,7 @@
     </nav>
 
 </div>
-<a class="btn btn-success float-end"  (click)="mostrar()" ><i class="fa fa-plus-circle"></i>
+<a class="btn btn-success float-end"  href="platos/nuevo" (click)="mostrar()" ><i class="fa fa-plus-circle"></i>
     Agregar</a><br><br>
 <div *ngIf="reg == 1">
     <app-registrar-platos></app-registrar-platos>
@@ -41,14 +41,6 @@
                 <td><img src="{{platos.imagen}}" alt="Imagen del plato" style="width:50px"></td>
             </tr>
         </tbody>
-        <tfoot>
-        <th>Acciones</th>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
-                <th>Tipo</th>
-                <th>Imagen</th>
-    </tfoot>
+        
     </table>
 </div>

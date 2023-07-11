@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { Personal } from '../servicio-personal/personal';
 import { PersonalService } from '../servicio-personal/personal.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-personal',
@@ -12,7 +13,16 @@ export class EditarPersonalComponent implements OnInit{
 
   id:number;
   personal:Personal = new Personal();
-  constructor(private route:ActivatedRoute, private personalServicio: PersonalService,private router:Router){}
+  formulario: FormGroup;
+
+  constructor(private route:ActivatedRoute, 
+    private personalServicio: PersonalService,
+    private router:Router,
+    private formBuilder: FormBuilder
+    ){  
+      this.formulario = this.formBuilder.group({
+      dni: ['', [Validators.required, Validators.pattern(/^\d{8}$/)]],
+  });}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

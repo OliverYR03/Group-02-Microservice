@@ -12,72 +12,90 @@
 <div class="col-md-12">
     <div class="box">
 <div class="card-body">
-    <form (ngSubmit)="onSubmit()">  
+    <form (ngSubmit)="onSubmit()" #formulario="ngForm">  
         <div class="col-sm-6">
             <div class="form-group">
-                <label >Plato</label>
-                <input type="text" class="form-control" [(ngModel)] = "opiniones.platos" name="nombre"
-                class="form-control"
-                id = "nombre"
-                name = "nombre"
+              <label>Plato</label>
+              <input type="text" class="form-control" [(ngModel)]="opiniones.platos" name="nombre"
+                id="nombre"
                 required
                 minlength="3"
-                maxlength="20"
-                placeholder="Digitar el Platillo "
-                #nombre = "ngModel">
+                maxlength="30"
+                placeholder="Digitar el Platillo"
+                #nombre="ngModel">
+              <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger mt-2">
+                <div *ngIf="nombre.errors?.['required']">El nombre del plato es requerido.</div>
+                <div *ngIf="nombre.errors?.['minlength']">Ingrese un nombre válido.</div>
+              </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-        <div class="form-group">
-            <label >Calificacion </label>
-            <input type="text" class="form-control" class="form-control"
-            id = "direccion"
-            name = "direccion"
-            required
-            minlength="4"
-            maxlength="50"
-            placeholder="Digite la Calificacion "
-            #direccion = "ngModel" [(ngModel)] = "opiniones.calificacion" name="dni">
-        </div></div>
-        <div class="col-sm-6">
-        <div class="form-group">
-            <label >Cliente</label>
-            <input type="text" class="form-control" class="form-control"
-            id = "numero"
-            name = "numero"
-            required
-            minlength="1"
-            maxlength="3"
-            placeholder="Cliente "
-            #numero = "ngModel" [(ngModel)] = "opiniones.clientes" name="cargo">
-        </div></div>
-        <div class="col-sm-6">
-        <div class="form-group">
-            <label >Comentario</label>
-            <input type="text" class="form-control"      class="form-control"
-            id = "tipopago"
-            name = "tipopago"
-            required
-            minlength="4"
-            maxlength="10"
-            placeholder="Digite El Comentario "
-            #tipoplato = "ngModel"[(ngModel)] = "opiniones.comentario" name="imagen">
-        </div></div>
-        <div class="col-sm-6">
-        <div class="form-group">
-            <label >Fecha</label>
-            <input type="text" class="form-control"      class="form-control"
-            id = "tipopago"
-            name = "tipopago"
-            required
-            minlength="4"
-            maxlength="10"
-            placeholder="Digite la Fecha"
-            #tipoplato = "ngModel"[(ngModel)] = "opiniones.fecha" name="imagen">
-        </div></div>
+          </div>
 
-        <button class="btn btn-success">Enviar</button>
-       <a class="btn btn-danger" href="opiniones" type="button"> <i class="fa fa-arrow-circle-left"> Cancelar</i></a>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Calificacion</label>
+              <input type="number" class="form-control" [(ngModel)]="opiniones.calificacion" name="calificacion"
+                id="calificacion"
+                required
+                min="1"
+                max="10"
+                placeholder="Digite la Calificacion"
+                #calificacion="ngModel">
+              <div *ngIf="calificacion.invalid && (calificacion.dirty || calificacion.touched)" class="text-danger mt-2">
+                <div *ngIf="calificacion.errors?.['required']">La calificación es requerida.</div>
+                <div *ngIf="calificacion.errors?.['min'] || calificacion.errors?.['max']">Ingrese una calificación válida (entre 1 y 10).</div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label>Cliente</label>
+              <input type="text" class="form-control" [(ngModel)]="opiniones.clientes" name="clientes"
+                id="clientes"
+                required
+                minlength="3"
+                placeholder="Cliente"
+                #clientes="ngModel">
+              <div *ngIf="clientes.invalid && (clientes.dirty || clientes.touched)" class="text-danger mt-2">
+                <div *ngIf="clientes.errors?.['required']">El cliente es requerido.</div>
+                <div *ngIf="clientes.errors?.['minlength']">Ingrese un cliente válido</div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label>Comentario</label>
+              <input type="text" class="form-control" [(ngModel)]="opiniones.comentario" name="comentario"
+                id="comentario"
+                required
+                minlength="4"
+                maxlength="30"
+                placeholder="Comentario"
+                #comentario="ngModel">
+              <div *ngIf="comentario.invalid && (comentario.dirty || comentario.touched)" class="text-danger mt-2">
+                <div *ngIf="comentario.errors?.['required']">El comentario es requerido.</div>
+                <div *ngIf="comentario.errors?.['minlength']">Ingrese un comentario válido.</div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+              <label>Fecha</label>
+              <input type="date" class="form-control" [(ngModel)]="opiniones.fecha" name="fecha"
+                id="fecha"
+                required
+                placeholder="Fecha"
+                #fecha="ngModel">
+              <div *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)" class="text-danger mt-2">
+                <div *ngIf="fecha.errors?.['required']">La fecha es requerida.</div>
+              </div>
+            </div>
+          </div>
+
+        <button class="btn btn-success"  [disabled]="!formulario.valid">Enviar</button>
+       <a class="btn btn-danger" href="opiniones" type="button">Cancelar</a>
     </form>
 </div>
     </div>

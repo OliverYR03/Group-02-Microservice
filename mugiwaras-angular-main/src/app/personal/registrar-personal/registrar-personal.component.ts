@@ -31,7 +31,7 @@ export class RegistrarPersonalComponent implements OnInit{
   guardarPersonal(){
     this.personalServicio.registrarPersonal(this.personal).subscribe(dato =>{ 
       console.log(dato);
-
+      this.irALaListaDePersonal();
     },error => console.log(error));
   }
 
@@ -44,4 +44,7 @@ export class RegistrarPersonalComponent implements OnInit{
     this.guardarPersonal();
   }
 
+  eliminarPersonal(){
+    
+  }
 }
