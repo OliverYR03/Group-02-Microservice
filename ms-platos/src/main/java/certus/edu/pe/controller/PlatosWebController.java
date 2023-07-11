@@ -23,7 +23,7 @@ import certus.edu.pe.exceptions.ResourceNotFoundException;
 import certus.edu.pe.modelo.Platos;
 import certus.edu.pe.repository.PlatosRepository;
 
-@CrossOrigin(origins = "http://localhost:4200") // conectar a angular peruano  || 3000 for react
+//@CrossOrigin(origins = "http://localhost:4200") // conectar a angular peruano  || 3000 for react
 @RestController
 @RequestMapping("/api")
 public class PlatosWebController {

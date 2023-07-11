@@ -16,9 +16,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mugiiwaras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    username: root
-    password: jhan1995
+    url: jdbc:mysql://localhost:3308/mugiiwaras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: admin
+    password: 542345
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 ##Configuraciones JPA - Hibernate

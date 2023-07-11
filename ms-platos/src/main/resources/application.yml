@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Platos
+    name: ms-platos
   cloud:
      config:
        uri: http://localhost:8888
