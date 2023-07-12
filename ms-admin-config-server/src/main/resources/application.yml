@@ -13,7 +13,7 @@ spring:
     config:
       server:
         native:
-          search-locations: C:\Users\borja\Desktop\servi2\Group-08-Microservice\ms-gestion-config-data
+          search-locations: ///F:\Desarrollo de Software\5 Quinto Ciclo\Y60\DSBS-Y60\ms-gestion-config-data
       
  
       
