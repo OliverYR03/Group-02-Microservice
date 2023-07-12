@@ -10,7 +10,7 @@ export class PlatosService {
 
 
   //Url para obtener el listado de personal
-  private baseURL = "http://desktop-n48uvci:8085/ms-platos/api/listar";
+  private baseURL = "http://localhost:8086/ms-platos/api/listar";
   
   constructor(private httpClient : HttpClient) {}
 

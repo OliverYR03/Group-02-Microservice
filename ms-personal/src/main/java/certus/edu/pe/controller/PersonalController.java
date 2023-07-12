@@ -21,7 +21,7 @@ import certus.edu.pe.exceptions.ResourceNotFoundException;
 import certus.edu.pe.modelo.Personal;
 import certus.edu.pe.repository.PersonalRepository;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class PersonalController {

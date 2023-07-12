@@ -21,6 +21,7 @@ import { EditarOrdenComponent } from './ordenes/editar-orden/editar-orden.compon
 import { EditarClientesComponent } from './clientes/editar-clientes/editar-clientes.component';
 import { EditarOpinionComponent } from './opiniones/editar-opinion/editar-opinion.component';
 import { EditarPersonalComponent } from './personal/editar-personal/editar-personal.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path : 'clientes', component:ListarClientesComponent},
   {path : 'opiniones', component:ListarOpinionesComponent},
   {path : 'ordenes', component:ListarOrdenComponent},
-  {path :'', redirectTo:'personal', pathMatch:'full'},
+  {path : 'home', component:HomeComponent},
+  {path :'', redirectTo:'home', pathMatch:'full'},
   //NUEVOS
   {path : 'personal/nuevo', component: RegistrarPersonalComponent},
   {path : 'platos/nuevo', component: RegistrarPlatosComponent},

@@ -9,7 +9,7 @@ import { Personal } from './personal';
 export class PersonalService {
 
   //Url para obtener el listado de personal
-  private baseURL = "http://localhost:8085/ms-mugiwaras/api/personal/listar";
+  private baseURL = "http://localhost:8087/ms-personal/api/listar";
   
   constructor(private httpClient : HttpClient) {}
 

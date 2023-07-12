@@ -4,7 +4,6 @@ server:
 # Registry Client
 eureka:
    client:
-      fetch-registry: true
       serviceUrl:
          defaultZone: http://localhost:8889/eureka
 # Mapeo de Microservicios
@@ -15,12 +14,32 @@ spring:
       discovery:
         locator:
           enabled: true
-          lowerCaseServiceId: true
       routes:
-      - id: id-mugiiwaras
+      - id: ms-platos
         uri: lb://MS-PLATOS
         predicates:
-        - Path=/mugiiwaras/**
+        - Path=/ms-platos/**
+        
+      - id: ms-ordenes
+        uri: lb://MS-ORDENES
+        predicates:
+        - Path=/ms-ordenes/**
+        
+      - id: ms-personal
+        uri: lb://MS-PERSONAL
+        predicates:
+        - Path=/ms-personal/**
+        
+      - id: ms-clientes
+        uri: lb://MS-CLIENTES
+        predicates:
+        - Path=/ms-clientes/**
+      
+      - id: ms-opiniones
+        uri: lb://MS-OPINIONES
+        predicates:
+        - Path=/ms-opiniones/**
+        
         
       - id: albums
         uri: https://jsonplaceholder.typicode.com/albums
