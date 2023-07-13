@@ -30,6 +30,9 @@ import { EditarPersonalComponent } from './personal/editar-personal/editar-perso
 import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 
+// a
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,7 @@ import { HomeComponent } from './home/home.component';
     EditarOpinionComponent,
     EditarPersonalComponent,
     CalendarioComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

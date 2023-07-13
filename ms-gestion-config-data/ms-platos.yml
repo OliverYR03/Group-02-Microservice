@@ -16,19 +16,20 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3308/mugiiwaras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    username: admin
+    url: jdbc:postgresql://localhost:5432/mugiwara
+    username: postgres
     password: 542345
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
+    
+#Configuraciones JPA - Hibernate
 
-##Configuraciones JPA - Hibernate
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL5Dialect
-    show-sql: true
-    hibernate:
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  show-sql: true
+  hibernate:
+    naming:
+      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 # Registry Client
 eureka:

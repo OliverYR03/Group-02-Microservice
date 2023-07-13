@@ -16,10 +16,14 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3308/mugiiwaras?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
-    username: admin
-    password: 542345
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:mem:mugiwara
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+
 
 ##Configuraciones JPA - Hibernate
   jpa:

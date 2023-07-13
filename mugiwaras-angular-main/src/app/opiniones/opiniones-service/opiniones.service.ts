@@ -10,7 +10,7 @@ export class OpinionesService {
 
 
   //Url para obtener el listado de personal
-  private baseURL = "http://localhost:8089/ms-opiniones/api/listar";
+  private baseURL = "http://localhost:8887/ms-opiniones/api/listar";
   
   constructor(private httpClient : HttpClient) {}
 

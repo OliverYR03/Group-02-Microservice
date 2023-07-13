@@ -1,12 +1,10 @@
 server:
   port: 8887
 
-# Registry Client
 eureka:
    client:
       serviceUrl:
          defaultZone: http://localhost:8889/eureka
-# Mapeo de Microservicios
  
 spring:
   cloud:
@@ -38,22 +36,12 @@ spring:
       - id: ms-opiniones
         uri: lb://MS-OPINIONES
         predicates:
-        - Path=/ms-opiniones/**
-        
+        - Path=/ms-opiniones/**       
         
       - id: albums
         uri: https://jsonplaceholder.typicode.com/albums
         predicates:
         - Path=/albums       
-# Activacion de endpoints         
-#management:
-#     endpoints:
-#       web:
-#         exposure:
-#           include: '*'
-#     endpoint:
-#       health:
-#         show-details: always
 
 management:
    endpoint:

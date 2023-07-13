@@ -23,7 +23,8 @@ spring:
 #        git:
 #          uri: https://github.com/OliverYR03/Group-08-Microservice.git
 #          search-paths: /ms-gestion-config-data/
-#          username: OliverYR03
-#          password: Perrito22"542@
+#          username: ${USER_NAME}
+#          password: ${PASSWORD}
 #          default-label: main
 #          clone-on-start: true
+#          ignore-local-ssh-settings: true

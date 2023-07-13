@@ -11,7 +11,7 @@ export class ClientesService {
 
 
   //Url para obtener el listado de personal
-  private baseURL = "http://localhost:8084/ms-clientes/api/listar";
+  private baseURL = "http://localhost:8887/ms-clientes/api/listar";
   
   constructor(private httpClient : HttpClient) {}
 

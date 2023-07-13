@@ -8,7 +8,11 @@ group = 'certus.edu.pe'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+	sourceCompatibility = '11'
+}
+
+jar {
+    archiveFileName = 'ms-admin-config-server.jar'
 }
 
 repositories {

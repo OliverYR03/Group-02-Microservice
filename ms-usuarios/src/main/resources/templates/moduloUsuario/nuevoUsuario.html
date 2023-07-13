@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:replace="layout/layout :: head">
+</head>
+
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<aside th:replace="layout/layout :: sidebar"></aside>
+	<main id="main" class="main">
+		<div class="pagetitle">
+			<h1>Nuevo Usuario</h1>
+			<nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/ventasOnline">Home</a></li>
+					<li class="breadcrumb-item active">Dashboard</li>
+				</ol>
+			</nav>
+		</div>
+		<section class="section dashboard">
+			<div class="row">
+				<div align="center">
+				<form action="#" th:action="@{/usuarios/guardar}" th:object="${usuario}" method="post">
+					<table border="0" cellpadding="10">
+						
+						<tr>
+							<td><label class="form-label">Nombre:</label></td>
+							<td><input class="form-control" type="text" th:field="*{nombre}" /></td>
+						</tr>
+						
+						<tr>
+							<td><label class="form-label">Apellido:</label></td>
+							<td><input class="form-control" type="text" th:field="*{apellido}" /></td>
+						</tr>
+						
+						<tr>
+							<td><label class="form-label">Correo:</label></td></td>
+							<td><input  class="form-control"type="email" th:field="*{correo}" /></td>
+						</tr>
+						
+						<tr>
+							<td><label class="form-label">Contraseña:</label></td>
+							<td><input class="form-control" type="password" th:field="*{contrasena}" /></td>
+						</tr>
+						
+						
+						<tr>
+							<td colspan="2"><button class="btn btn-success float-center"type="submit"> Guardar </button></td>
+						</tr>		
+						<tr> <td ><a class="btn btn-info" th:href="@{/usuarios/listar}">Cancelar</a></td> </tr>
+					</table>
+				</form>
+			</div>
+			</div>
+		</section>
+	</main>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+
+</html>

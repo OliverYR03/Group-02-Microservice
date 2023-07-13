@@ -1,0 +1,7 @@
+FROM openjdk:11
+VOLUME /tmp
+ENV IMG_PATH=/img
+EXPOSE 8087
+RUN mkdir -p /img
+ADD ./target/Personal-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT [ "java","-jar","/app.jar" ]

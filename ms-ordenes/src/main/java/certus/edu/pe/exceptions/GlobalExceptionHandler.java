@@ -2,7 +2,6 @@ package certus.edu.pe.exceptions;
 
 import java.util.Date;
 
-import org.springframework.*;
 import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

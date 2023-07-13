@@ -10,7 +10,7 @@ export class OrdenesService {
 
 
   //Url para obtener el listado de personal
-  private baseURL = "http://localhost:8088/ms-ordenes/api/listar";
+  private baseURL = "http://localhost:8887/ms-ordenes/api/listar";
   
   
   constructor(private httpClient : HttpClient) {}

@@ -22,6 +22,7 @@ import { EditarClientesComponent } from './clientes/editar-clientes/editar-clien
 import { EditarOpinionComponent } from './opiniones/editar-opinion/editar-opinion.component';
 import { EditarPersonalComponent } from './personal/editar-personal/editar-personal.component';
 import { HomeComponent } from './home/home.component';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path : 'clientes', component:ListarClientesComponent},
   {path : 'opiniones', component:ListarOpinionesComponent},
   {path : 'ordenes', component:ListarOrdenComponent},
+  {path : 'calendario', component: CalendarioComponent},
   {path : 'home', component:HomeComponent},
   {path :'', redirectTo:'home', pathMatch:'full'},
   //NUEVOS
