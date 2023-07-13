@@ -21,7 +21,7 @@ spring:
 #    config:
 #      server:
 #        git:
-#          uri: https://github.com/OliverYR03/Group-08-Microservice.git
+#          uri: https://github.com/OliverYR03/Group-02-Microservice.git
 #          search-paths: /ms-gestion-config-data/
 #          username: ${USER_NAME}
 #          password: ${PASSWORD}
